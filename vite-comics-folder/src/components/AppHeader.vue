@@ -1,15 +1,15 @@
 <template lang="">
   <header>
-      <section class="logo">
-          <img src="../assets/img/dc-logo-bg.png" alt="La Molisana main logo">
-      </section>
-      <nav class="navigation">
+    <section class="logo col-4">
+    <img src="../assets/img/dc-logo.png" alt="logo">
+</section>
+      <nav class="navigation col-8">
           <ul>
-              <li v-for="link in navLinks" :class="(link.active) ? 'active' : ''">
-                  <a :href="link.url">
-                      {{ link.content }}
-                  </a>
-              </li>
+            <li v-for="link in navLinks" :key="link.content">
+            <a>
+                {{ link.content }}
+            </a>
+        </li>
           </ul>
       </nav>
   </header>
@@ -22,28 +22,58 @@ export default {
       return {
           navLinks : [
               {
-                  content: 'Home',
+                  content: 'CHARACTERS',
                   url: '#',
                   active: false,
               },
 
               {
-                  content: 'Prodotti',
+                  content: 'COMICS',
                   url: '#',
                   active: true,
               },
 
               {
-                  content: 'Chi Siamo',
+                  content: 'MOVIES',
                   url: '#',
                   active: false,
               },
 
               {
-                  content: 'Contatti',
+                  content: 'TV',
                   url: '#',
                   active: false,
-              }
+              },
+              {
+                  content: 'GAMES',
+                  url: '#',
+                  active: false,
+              },
+              {
+                  content: 'COLLECTIBLES',
+                  url: '#',
+                  active: false,
+              },
+              {
+                  content: 'VIDEOS',
+                  url: '#',
+                  active: false,
+              },
+              {
+                  content: 'FANS',
+                  url: '#',
+                  active: false,
+              },
+              {
+                  content: 'NEWS',
+                  url: '#',
+                  active: false,
+              },
+              {
+                  content: 'SHOP',
+                  url: '#',
+                  active: false,
+              },
           ],
       }
   },
@@ -55,32 +85,30 @@ export default {
 @use '../styles/partials/mixins' as *;
 
 
+
+
 header{
   @include flex(row, center, center);
-  flex-wrap: wrap;
-  margin-bottom: 5rem;
+
   section.logo{
-      width: 100%;
+
       @include flex(row, center, center);
-      margin-bottom: 2.5rem;
+    
+      padding: 20px;
   }
 
   nav.navigation > ul{
       @include flex(row, center, center);
+
       list-style-type: none;
 
       li{
-          margin-right: 1.5rem;
+        margin-right: 10px;
           font-size: 1.1rem;
-          padding: .9rem 1.15rem;
-          &.active{
-              background-color: $header-nav-bg;
-          }
-
-          &:hover{
-              background-color: $accent-color;
-          }
+        
+  
       }
+ 
   }
 }
 </style>
