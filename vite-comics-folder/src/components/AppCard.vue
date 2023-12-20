@@ -35,6 +35,7 @@
   
     .img-container {
       margin-bottom: 1rem;
+      width: 80%;
     }
 
     

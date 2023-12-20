@@ -2,8 +2,8 @@
   <main class="row bg-dark">
     <div class="background"></div>
 
-    <section class="content-section col-12 d-flex align-items-center">
-      <div class="comics-container d-flex wrap">
+    <section class="content-section align-items-center ">
+      <div class="comics-container ">
         <AppCard
           v-for="comicInfo in json"
           :key="comicInfo.series"
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+
 import AppCard from './AppCard.vue';
 import json from '../assets/json/dc-comics.json';
 
@@ -49,9 +50,14 @@ main {
   @include flex(row, center, stretch);
 }
 
-section.content-section {
-  height: 200px;
-  justify-content: center;
+
+.comics-container {
+
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
 }
 
 
